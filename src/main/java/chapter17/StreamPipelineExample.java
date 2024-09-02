@@ -38,7 +38,7 @@ public class StreamPipelineExample {
          */
     }
 
-    static class Student {
+    static class Student implements Comparable<Student> {
         private String name;
         private int score;
 
@@ -53,6 +53,11 @@ public class StreamPipelineExample {
 
         public int getScore() {
             return this.score;
+        }
+
+        @Override
+        public int compareTo(Student o) {
+            return Integer.compare(score, o.getScore());
         }
     }
 }
